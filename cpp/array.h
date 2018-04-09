@@ -40,12 +40,8 @@ public:
 	}
 
 	void swap(array<T> &b) {
-		T *ta = a;
-		a = b.a;
-		b.a = ta;
-		int tl = length;
-		length = b.length;
-		b.length = tl;
+		std::swap(a, b.a);
+		std::swap(length, b.length);
 	}
 
 	T& operator[](int i) {
