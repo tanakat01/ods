@@ -17,12 +17,12 @@ public:
 		long zi = 1;
 		for (int i = 0; i < x.length; i++) {
 			// reduce to 31 bits
-			long long xi = (ods::hashCode(x[i]) * z2) >> 1; 
+			unsigned long long xi = (ods::hashCode(x[i]) * z2) >> 1; 
 			s = (s + zi * xi) % p;
 			zi = (zi * z) % p;	
 		}
 		s = (s + zi * (p-1)) % p;
-		return (int)s;
+		return (unsigned)s;
 	}
 };
 
