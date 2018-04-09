@@ -146,7 +146,7 @@ public:
 			deleteNode(u);
 			u = n;
 		}
-		memset(sentinel->next, '\0', sizeof(Node*)*h);
+		memset(sentinel->next, '\0', sizeof(Node*)*(h + 1));
 		h = 0;
 		n = 0;
 	}

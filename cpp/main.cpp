@@ -389,7 +389,7 @@ void listTests(List &ell, int n, unsigned flags)
 
 void sortTests(int n) {
 	clock_t start, stop;
-	array<int> a(n);
+        ods::array<int> a(n);
 
 	for (int i = 0; i < n; i++)
 		a[i] = rand();

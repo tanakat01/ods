@@ -35,7 +35,7 @@ protected:
 			ArrayDeque<T>::add(i, x);
 		}
 		virtual bool add(T x) {
-			ArrayDeque<T>::add(size(), x);
+			ArrayDeque<T>::add(ArrayDeque<T>::size(), x);
 			return true;
 		}
 		void resize() {}

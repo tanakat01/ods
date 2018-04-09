@@ -31,6 +31,14 @@ public:
 	void fill(T x);
 	virtual ~array();
 
+	array<T>& operator=(array<T> &b) {
+		length = b.length;
+		a = new T[length];
+		for (int i = 0; i < length; i++)
+			a[i] = b.a[i];
+		return *this;
+	}
+
 	void swap(array<T> &b) {
 		T *ta = a;
 		a = b.a;
@@ -38,7 +46,6 @@ public:
 		int tl = length;
 		length = b.length;
 		b.length = tl;
-		return *this;
 	}
 
 	T& operator[](int i) {
