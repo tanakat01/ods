@@ -26,7 +26,7 @@ protected:
 		BDeque(int b) {
 			n = 0;
 			j = 0;
-			array<int> z(b+1);
+			array<T> z(b+1);
 			a.swap(z);
 		}
 		virtual ~BDeque() { }

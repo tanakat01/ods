@@ -148,7 +148,6 @@ bool BinarySearchTree<Node, T>::addChild(Node *p, Node *u) {
 			} else if (comp > 0) {
 				p->right = u;
 			} else {
-				delete u;
 				return false;   // u.x is already in the tree
 			}
 			u->parent = p;
@@ -162,7 +161,11 @@ bool BinarySearchTree<Node, T>::add(T x) {
 	Node *p = findLast(x);
 	Node *u = new Node;
 	u->x = x;
-	return addChild(p, u);
+	if (!addChild(p, u)) {
+	  delete u;
+	  return false;
+	}
+	return true;
 }
 
 template<class Node, class T>
