@@ -32,6 +32,9 @@ public:
 	virtual void add(T x) { add(size(), x); }
 	virtual T remove(int i);
 	virtual void clear();
+#ifdef EX2_1
+#include "ex2_1.h" 
+#endif
 };
 
 template<class T> inline

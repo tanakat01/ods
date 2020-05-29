@@ -97,7 +97,7 @@ T SkiplistSSet<T>::find(T x) {
 template<class T>
 bool SkiplistSSet<T>::remove(T x) {
 	bool removed = false;
-	Node *u = sentinel, *del;
+	Node *u = sentinel, *del = 0;
 	int r = h;
 	int comp = 0;
 	while (r >= 0) {
