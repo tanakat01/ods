@@ -83,14 +83,14 @@ void RedBlackTree<Node,T>::pullBlack(Node *u) {
 template<class Node, class T>
 void RedBlackTree<Node,T>::flipLeft(Node *u) {
 	swapcolours(u, u->right);
-	rotateLeft(u);
+	this->rotateLeft(u);
 }
 
 
 template<class Node, class T>
 void RedBlackTree<Node,T>::flipRight(Node *u) {
 	swapcolours(u, u->left);
-	rotateRight(u);
+	this->rotateRight(u);
 }
 
 
@@ -170,7 +170,7 @@ Node* RedBlackTree<Node,T>::removeFixupCase2(Node *u) {
 	flipLeft(w); // w is now red
 	Node *q = w->right;
 	if (q->colour == red) { // q-w is red-red
-		rotateLeft(w);
+		this->rotateLeft(w);
 		flipRight(v);
 		pushBlack(q);
 		if (v->right->colour == red)
@@ -191,7 +191,7 @@ Node* RedBlackTree<Node,T>::removeFixupCase3(Node *u) {
 	flipRight(w);            // w is now red
 	Node *q = w->left;
 	if (q->colour == red) { // q-w is red-red
-		rotateRight(w);
+		this->rotateRight(w);
 		flipLeft(v);
 		pushBlack(q);
 		return q;
@@ -263,7 +263,7 @@ bool RedBlackTree<Node,T>::add(T x) {
 
 template<class Node, class T>
 bool RedBlackTree<Node,T>::remove(T x) {
-	Node *u = findLast(x);
+	Node *u = this->findLast(x);
 	if (u == nil || compare(u->x, x) != 0)
 		return false;
 	Node *w = u->right;
@@ -276,7 +276,7 @@ bool RedBlackTree<Node,T>::remove(T x) {
 		u->x = w->x;
 		u = w->right;
 	}
-	splice(w);
+	this->splice(w);
 	u->colour += w->colour;
 	u->parent = w->parent;
 	delete w;

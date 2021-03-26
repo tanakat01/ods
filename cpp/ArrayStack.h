@@ -17,12 +17,11 @@ class DualArrayDeque;
 
 template<class T>
 class ArrayStack {
-protected:
+public:
 	friend class DualArrayDeque<T>;
 	array<T> a;
 	int n;
 	virtual void resize();
-public:
 	ArrayStack();
 	virtual ~ArrayStack();
 	int size();

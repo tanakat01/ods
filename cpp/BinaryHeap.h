@@ -16,7 +16,7 @@ namespace ods {
 
 template<class T>
 class BinaryHeap {
-protected:
+public:
 	array<T> a;
 	int n;
 	void resize();
@@ -31,7 +31,6 @@ protected:
 	static int parent(int i) {
 		return (i-1)/2;
 	}
-public:
 	BinaryHeap();
 	BinaryHeap(array<T>& b);
 	virtual ~BinaryHeap();
